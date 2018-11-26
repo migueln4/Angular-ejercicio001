@@ -260,3 +260,16 @@ let antman2:Defensor = new Defensor2("Antman","Team Cap","Scott Lang");
 
 console.log(antman2)
 
+@imprimirConsola //Esto se llama "decorador". Para las clases, un decorador lo que hace es enviar como parámetro el constructor a la fuerza. En este ejemplo, va a imprimir el constructor en la consola.
+class Villano{ //Nos podemos ahorrar código si utilizamos un constructor de la siguiente forma:
+    //public nombre:string;
+    constructor(public nombre:string) { //Las dos líneas comentadas no hacen falta si se define así el constructor, ya que en él ya está el modificador de visibilidad y, de forma implícita, la inicialización.
+        //this.nombre = nombre;
+    }
+}
+
+function imprimirConsola(constructor:Function) {
+    console.log(constructor);
+}
+
+//A noviembre de 2018, los decoradores son una característica experimental y por eso puede provocar un warning.

@@ -1,3 +1,9 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var mensaje = "Hola";
 var SALUDO = "Buenos días";
 if (true) {
@@ -162,7 +168,7 @@ var Defensor = /** @class */ (function () {
     return Defensor;
 }());
 var antman = new Defensor(); //Así se crea el objeto.
-console.log(+antman); //Este será un objeto vacío.
+console.log(antman); //Este será un objeto vacío.
 //Para darle valores a un objeto de una clase hay que utilizar un constructor, que realmente también es una función.
 var Defensor2 = /** @class */ (function () {
     function Defensor2(nombre, equipo, nombreReal) {
@@ -177,3 +183,18 @@ var Defensor2 = /** @class */ (function () {
 }());
 var antman2 = new Defensor2("Antman", "Team Cap", "Scott Lang");
 console.log(antman2);
+var Villano = /** @class */ (function () {
+    //public nombre:string;
+    function Villano(nombre) {
+        this.nombre = nombre;
+        //this.nombre = nombre;
+    }
+    Villano = __decorate([
+        imprimirConsola //Esto se llama "decorador". Para las clases, un decorador lo que hace es enviar como parámetro el constructor a la fuerza. En este ejemplo, va a imprimir el constructor en la consola.
+    ], Villano);
+    return Villano;
+}());
+function imprimirConsola(constructor) {
+    console.log(constructor);
+}
+//A noviembre de 2018, los decoradores son una característica experimental y por eso puede provocar un warning.
