@@ -217,10 +217,46 @@ function entrenar(xmen:XMen) {
     console.log("Entrenando a "+xmen.nombre);
 }
 
-let ciclope:XMen = { //Este objeto coincide con la interfaz que se ha definido. Por eso se le puede poner el tipo de dato así.
+let ciclope:XMen = { //Este objeto coincide con la interfaz que se ha definido. Por eso se le puede poner el tipo de dato así. Se cumple la interfaz si los nombres de las variables son los mismos.
     nombre: "Scott Summers",
     poder: "rayos oculares"
 };
 
 enviarMision(ciclope);
 entrenar(ciclope);
+
+/* ---------------------- PROGRAMACIÓN ORIENTADA A OBJETOS --------------------- */
+
+class Defensor { //Así es como se declara una clase. El nombre de ir en mayúsculas, siguiendo las mismas normas que las interfaces
+
+    nombre:string;
+    equipo:string;
+    nombreReal:string;
+    puedePelear:boolean;
+    peleasGanadas:number; //Estas son las propiedades de la clase. Solamente se han definido.
+}
+
+let antman:Defensor = new Defensor(); //Así se crea el objeto.
+console.log(antman); //Este será un objeto vacío.
+
+//Para darle valores a un objeto de una clase hay que utilizar un constructor, que realmente también es una función.
+
+class Defensor2 {
+    nombre:string = "Ant-Man";
+    equipo:string;
+    nombreReal:string;
+    puedePelear:boolean = false;
+    peleasGanadas:number;
+
+    constructor(nombre:string,equipo:string,nombreReal:string) { //Así es como se define un constructor. Este es mucho más potente que el por defecto que ya existe que no le da valores por defecto a ninguna de las propiedades. Si se quiere que ya haya valores por defecto, se puden inicializar las propiedades con esos valores en la definición.
+        console.log("Se ejecuta el constructor");
+        this.nombre = nombre; //Esto funciona igual que Java.
+        this.equipo = equipo;
+        this.nombreReal = nombreReal;
+    }
+}
+
+let antman2:Defensor = new Defensor2("Antman","Team Cap","Scott Lang");
+
+console.log(antman2)
+
