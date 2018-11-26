@@ -197,4 +197,4 @@ var Villano = /** @class */ (function () {
 function imprimirConsola(constructor) {
     console.log(constructor);
 }
-//A noviembre de 2018, los decoradores son una característica experimental y por eso puede provocar un warning.
+//A noviembre de 2018, los decoradores son una característica experimental y por eso puede provocar un warning. Se puede quitar ese warning en el archivo tsconfig.json.
