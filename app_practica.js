@@ -1,5 +1,5 @@
 // Uso de Let y Const
-var nombre = "Dick Grayson";
+var robin = "Dick Grayson";
 var edad = 23;
 var PERSONAJE = {
     nombre: nombre,
@@ -33,10 +33,10 @@ function getAvengerSolucion(nombre, poder, arma) {
     if (arma === void 0) { arma = "arco"; }
     var mensaje;
     if (poder) {
-        mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+        mensaje = nombre + " tiene el poder de " + poder + " y su arma es " + arma + ".";
     }
     else {
-        mensaje = nombre + " tiene un " + poder;
+        mensaje = nombre + " tiene el arma de " + arma;
     }
     console.log(mensaje);
 }
@@ -50,10 +50,12 @@ function getAvengerSolucion(nombre, poder, arma) {
 // ese método debe de retornar un numero.
 var Rectangulo = /** @class */ (function () {
     function Rectangulo(base, altura) {
-        var _this = this;
-        this.calcularArea = function () { return _this.base * _this.altura; };
         this.base = base;
         this.altura = altura;
     }
+    //calcularArea = () => this.base*this.altura; <- Así sería con una flecha
+    Rectangulo.prototype.calcularArea = function () {
+        return this.base * this.altura;
+    };
     return Rectangulo;
 }());

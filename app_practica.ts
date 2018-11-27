@@ -1,5 +1,5 @@
 // Uso de Let y Const
-let nombre:string = "Dick Grayson";
+let robin:string = "Dick Grayson";
 let edad:number = 23;
 
 const PERSONAJE:{nombre:string,edad:number} = {
@@ -16,7 +16,7 @@ let batman:Heroe = {
 
 interface Heroe {
   nombreReal:string,
-  artesMarciales:string[]
+  artesMarciales:string[] //Así se declara un array dentro de una interfaz o como propiedad de una clase.
 }
 
 // Convertir esta funcion a una funcion de flecha
@@ -40,11 +40,11 @@ function getAvenger( nombre, poder, arma ){
 };
 
 function getAvengerSolucion(nombre:string,poder?:string,arma:string="arco") {
-  let mensaje;
+  let mensaje:string;
   if(poder) {
-    mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+    mensaje = `${nombre} tiene el poder de ${poder} y su arma es ${arma}.`;
   }else{
-     mensaje = nombre + " tiene un " + poder
+     mensaje = `${nombre} tiene el arma de ${arma}`;
   }
   console.log(mensaje);
 };
@@ -63,5 +63,8 @@ class Rectangulo {
     this.base = base;
     this.altura = altura;
   }
-  calcularArea = () => this.base*this.altura;
+  //calcularArea = () => this.base*this.altura; <- Así sería con una flecha
+  calcularArea():number { //Esta anotación lo que hace es avisar de qué tipo es el que se va a devolver por esta función.
+    return this.base*this.altura;
+  }
 }

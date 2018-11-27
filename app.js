@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var mensaje = "Hola";
-var SALUDO = "Buenos días";
+var SALUDO = "Buenos días"; //Es obligatorio darle el valor a la constante nada más declararla.
 if (true) {
     var mensaje_1 = "Adiós"; //Cuando la variable es var, al cambiarla dentro de los scopes, también varía fuera de ellos. Al hacerla let significa que tiene un scope local.
     var SALUDO_1 = "Buenas tardes";
@@ -167,6 +167,7 @@ var Defensor = /** @class */ (function () {
     }
     return Defensor;
 }());
+//NOTA: si hay una propiedad de una clase que sea opcional, se utiliza la misma sintaxis que cuando se trata de un parámetro de una función: nombre?:string.
 var antman = new Defensor(); //Así se crea el objeto.
 console.log(antman); //Este será un objeto vacío.
 //Para darle valores a un objeto de una clase hay que utilizar un constructor, que realmente también es una función.

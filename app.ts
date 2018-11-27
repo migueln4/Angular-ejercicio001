@@ -1,6 +1,6 @@
 let mensaje = "Hola";
 
-const SALUDO = "Buenos días";
+const SALUDO = "Buenos días"; //Es obligatorio darle el valor a la constante nada más declararla.
 
 if (true) {
     let mensaje = "Adiós"; //Cuando la variable es var, al cambiarla dentro de los scopes, también varía fuera de ellos. Al hacerla let significa que tiene un scope local.
@@ -235,6 +235,8 @@ class Defensor { //Así es como se declara una clase. El nombre de ir en mayúsc
     puedePelear:boolean;
     peleasGanadas:number; //Estas son las propiedades de la clase. Solamente se han definido.
 }
+
+//NOTA: si hay una propiedad de una clase que sea opcional, se utiliza la misma sintaxis que cuando se trata de un parámetro de una función: nombre?:string.
 
 let antman:Defensor = new Defensor(); //Así se crea el objeto.
 console.log(antman); //Este será un objeto vacío.
